@@ -1,0 +1,330 @@
+:root {
+    /* # Colors */
+    /* ## Primary */
+    --Lime: hsl(61, 70%, 52%);
+    --Red: hsl(4, 69%, 50%);
+  
+    /* ## Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Slate_100: hsl(202, 86%, 94%);
+    --Slate_300: hsl(203, 41%, 72%);
+    --Slate_500: hsl(200, 26%, 54%);
+    --Slate_700: hsl(200, 24%, 40%);
+    --Slate_900: hsl(202, 55%, 16%);
+  
+    /* ### Font */
+    --font_family: "Plus Jakarta Sans", sans-serif;
+  }
+  
+  /* CSS reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* document styling */
+  
+  body {
+    font-family: var(--font_family);
+    background-color: var(--White);
+    height: 100vh;
+  }
+  
+  .header {
+    color: var(--Slate_900);
+    padding: 1rem;
+    font-size: .875rem;
+  }
+  
+  h1 {
+    font-size: 1.25rem;
+  }
+  
+  .clear_btn {
+    margin-top: .5rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--Slate_700);
+    color: var(--Slate_700);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  
+  .main {
+    color: var(--Slate_700);
+    font-weight: 600;
+    max-width: 1000px;
+  }
+  
+  .input_grp {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    position: relative;
+    margin-bottom: .5rem;
+  }
+  
+  .input_grp input {
+    height: 2.6rem;
+    border-radius: .5rem;
+    border: 1px solid var(--Slate_300);
+    padding: 1rem;
+  }
+  
+  .input_grp:first-child input {
+    padding-left: 2rem;
+  }
+  
+  .input_left,
+  .input_right {
+    position: absolute;
+    top: 30%;
+    height: 2.4rem;
+    font-size: 1rem;
+    background-color: var(--Slate_100);
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .input_left.error,
+  .input_right.error {
+    background-color: var(--Red);
+    color: var(--White);
+  }
+  
+  .input_left {
+    left: .5%;
+    width: 25px;
+    border-radius: .5rem 0 0 .5rem;
+  }
+  
+  .input_right {
+    right: .5%;
+    width: 60px;
+    border-radius: 0 .5rem .5rem 0;
+  }
+  
+  .input_right.interest {
+    width: 30px;
+  }
+  
+  .my_form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  fieldset {
+    border: 0;
+  }
+  
+  fieldset legend {
+    margin-bottom: 1rem;
+  }
+  
+  fieldset div {
+    margin-bottom: .5rem;
+    border: 1px solid rgba(0, 0, 0, .5);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    color: var(--Slate_900);
+    font-weight: 700;
+  
+    display: flex;
+    align-items: center;
+  }
+  
+  fieldset div.clicked {
+    background-color: hsl(61, 70%, 82%);;
+  }
+  
+  fieldset div label {
+    margin-left: 1rem;
+  }
+  
+  .radio_container input[type="radio"] {
+    opacity: 0;
+  }
+  
+  .radio_container .checkmark_container {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    border: .5px solid black;
+    border-radius: 50%;
+  }
+  
+  .radio_container.clicked .checkmark_container {
+    border: .5px solid var(--Lime);
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .radio_container.clicked .checkmark {
+    position: relative;
+    height: 10px;
+    width: 10px;
+    background-color: var(--Lime);
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .submit_btn {
+    cursor: pointer;
+    padding: 1rem;
+    border-radius: 100vmax;
+    background-color: var(--Lime);
+    outline: none;
+    border: 0;
+    margin: 0 auto;
+    width: 100%;
+    font-weight: 700;
+    font-size: 1.125rem;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+  }
+  
+  .submit_btn:hover {
+    opacity: .8;
+  }
+  
+  .empty_result_container.hidden,
+  .result_container.hidden {
+    display: none;
+  }
+  
+  .empty_result_container,
+  .result_container {
+    margin-top: 1rem;
+    width: 100%;
+    background-color: var(--Slate_900);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+  
+  .empty_result_container {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .result_container {
+    text-align: left;
+  }
+  
+  h2 {
+    color: var(--White);
+  }
+  
+  .empty_result_container p,
+  .result_container  {
+    color: var(--Slate_500);
+  }
+  
+  .values_container {
+    background-color: hsl(202, 55%, 14%);
+    padding: 1.25rem;
+    border-top: 4px solid var(--Lime);
+    border-radius: .5rem;
+  }
+  
+  .values_container div:first-child {
+    border-bottom: .5px solid var(--Slate_700);
+  }
+  
+  .values_container div:last-child {
+    padding-top: 1rem;
+  }
+  
+  .values_container div {
+    padding-bottom: 1rem;
+  }
+  
+  .monthly_repayments {
+    color: var(--Lime);
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .total {
+    color: var(--White);
+    font-size: 1.25rem;
+    margin-top: .5rem;
+  }
+  
+  /* error handeling */
+  
+  .error_msg {
+    opacity: 1;
+    color: var(--Red);
+  }
+  
+  .error_msg.hidden {
+    opacity: 0;
+  }
+  
+  @media (min-width: 768px) {
+    body {
+      background-color: var(--Slate_100);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+    }
+    .main {
+      display: flex;
+      height: 500px;
+      background-color: var(--White);
+    }
+    .left_container {
+      width: 50%;
+      border-radius: 1rem 0 0 1rem;
+    }
+    .submit_btn {
+      margin: 0;
+      width: 60%;
+    }
+    .term_intereset {
+      display: flex;
+      justify-content: space-between;
+    }
+    .term_intereset .input_grp {
+      width: 40%;
+    }
+    .empty_result_container,
+    .result_container {
+      width: 50%;
+      margin: 0;
+      border-radius: 0 1rem 1rem 3rem;
+    }
+    .result_container {
+      justify-content: flex-start;
+    }
+    .monthly_repayments {
+      font-size: 3rem;
+    }
+  }

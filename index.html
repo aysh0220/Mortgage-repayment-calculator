@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+  <link 
+      rel="preload" 
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" 
+      as="style" 
+    />
+    <link 
+    rel="stylesheet" 
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" 
+     />
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <main class="main">
+      <div class="left_container">
+        <header class="header">
+          <h1>Mortgage Calculator</h1>
+          <button class="clear_btn">Clear All</button>
+        </header>
+        <form action="" class="my_form">
+          <div class="input_grp">
+            <label for="mortgage_amount">Mortgage Amount</label>
+            <input type="number" id="mortgage_amount" min="1000" max="1000000">
+            <p class="error_msg hidden">this element is required</p>
+            <div class="input_left">
+              <p>£</p>
+            </div>
+          </div>
+          <div class="term_intereset">
+            <div class="input_grp">
+              <label for="mortgage_term">Mortgage Term</label>
+              <input type="number"  id="mortgage_term" min="1" max="50">
+              <p class="error_msg hidden">this element is required</p>
+              <div class="input_right">
+                <p>years</p>
+              </div>
+            </div>
+            <div class="input_grp">
+              <label for="interest">Interest Rate</label>
+              <input type="number" id="interest" step="0.01" min="0.1" max="100">
+              <p class="error_msg hidden">this element is required</p>
+              <div class="input_right interest">
+                <p>%</p>
+              </div>
+            </div>
+          </div>
+          <fieldset>
+            <legend>Mortgage Type</legend>
+              <div class="radio_container">
+                <input type="radio" name="mortgage_type" id="repayment">
+                <span class="checkmark_container">
+                  <span class="checkmark"></span>
+                </span>
+                <label for="repayment">Repayment</label>
+              </div>
+              <div class="radio_container">
+                <input type="radio" name="mortgage_type" id="interest_only">
+                <span class="checkmark_container">
+                  <span class="checkmark"></span>
+                </span>
+                <label for="interest_only">Interest Only</label>
+              </div>
+              <p class="error_msg hidden">this element is required</p>
+          </fieldset>
+          <button type="submit" class="submit_btn">
+            <img src="./assets/images/icon-calculator.svg" alt="icon calculator" class="icon">
+            <p>Calculate Repayments</p>
+          </button>
+        </form>
+      </div>
+      <div class="empty_result_container">
+        <img src="./assets/images/illustration-empty.svg" class="illustration-empty" alt="illustration empty">
+        <h2>Results shown here</h2>
+        <p>
+          Complete the form and click “calculate repayments” to see what 
+          your monthly repayments would be.
+        </p>
+      </div>
+      <div class="result_container hidden">
+        <h2>Your results</h2>
+        <p>
+          Your results are shown above below based on the information 
+          you provided. To adjust the results, edit the form and click
+          "calculate repayments" again
+        </p>
+        <div class="values_container">
+          <div>
+            <p>Your monthly repayments</p>
+            <p class="monthly_repayments"></p>
+          </div>
+          <div>
+            <p>total you'll repay over the term</p>
+            <p class="total"></p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  
+</body>
+</html>
